@@ -10,7 +10,7 @@ output "environment" {
 
 output "bastion_public_ip" {
   description = "Public IP address for the Bastion Server"
-  value       = "0.0.0.0"
+  value       = "${aws_eip.bastion.public_ip}"
 }
 
 output "ami_id" {
