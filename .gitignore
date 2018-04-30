@@ -1,0 +1,4 @@
+# Terraform caching files
+terraform/.terraform
+# Terraform temporary state files
+terraform/terraform.tfstate*
