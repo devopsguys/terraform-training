@@ -28,9 +28,7 @@ resource "aws_security_group_rule" "web_http_in" {
   to_port           = 80
   protocol          = "tcp"
 
-  cidr_blocks = [
-    "${aws_vpc.master.cidr_block}",
-  ]
+  source_security_group_id = "${aws_security_group.alb.id}"
 }
 
 resource "aws_security_group_rule" "web_http_out" {

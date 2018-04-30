@@ -17,3 +17,8 @@ output "ami_id" {
   description = "AMI ID of for Ubuntu 16.04 LTS in the current region."
   value       = "${data.aws_ami.ubuntu.id}"
 }
+
+output "load_balancer_dns_name" {
+  description = "DNS Name of the ELB Load Balancer"
+  value       = "${aws_lb.web.dns_name}"
+}
