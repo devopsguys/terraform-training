@@ -29,9 +29,7 @@ resource "aws_security_group_rule" "bastion_ssh_out" {
   to_port           = 22
   protocol          = "tcp"
 
-  cidr_blocks = [
-    "0.0.0.0/0",
-  ]
+  source_security_group_id = "${aws_security_group.web.id}"
 }
 
 resource "aws_security_group_rule" "bastion_http_out" {
